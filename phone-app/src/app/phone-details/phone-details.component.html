@@ -1,0 +1,28 @@
+<!--<p>
+  phone-details works!
+</p>
+<p> phone-item Works! </p>
+<a [routerLink]="['']"> Back to list </a>-->
+<h1> Phone details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+
+<div *ngIf="phone">
+  <div class="phone-thumbnail">
+    <img height="300" [src]="phone.image" />
+  </div>
+
+  <div class="phone-info">
+    <h2> {{ phone.name }}&nbsp;</h2>
+    <h3> {{ phone.brand }} </h3>
+
+    <div *ngIf="phone.specs.length">
+      <h4> Features </h4>
+      <ul>
+        <li *ngFor="let spec of phone.specs"> {{ spec&nbsp;}} </li>
+        <!-- Place the button where you like most in the template-->
+        <button (click)="deletePhone()"> Delete </button>
+      </ul>
+    </div>
+  </div>
+</div>

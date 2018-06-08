@@ -1,0 +1,17 @@
+<!--<p>
+  phone-list works!
+</p>
+<a [routerLink]="['phone', 42]"> View Details </a>
+<h1> Add a new phone </h1>
+<a [routerLink]="['add']"> Add a new phone </a>
+incluyo esto por mi cuenta-->
+<h1> Phone list </h1>
+
+<div  *ngFor="let phone of phones">
+  <div id="phone">
+    <img [src]="phone.image" />
+    <h3> {{ phone.name }}&nbsp;</h3>
+    <p> {{ phone.brand }} </p>
+    <a [routerLink]="['phone', phone._id]"> View Details </a>
+  </div>
+</div>
